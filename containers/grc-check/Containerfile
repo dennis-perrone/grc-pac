@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN pip install pyyaml requests
+
+COPY grc-check.py .
+
+ENTRYPOINT ["python", "/app/grc-check.py"]

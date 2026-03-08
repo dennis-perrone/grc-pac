@@ -1,0 +1,10 @@
+FROM openpolicyagent/opa:latest
+
+#WORKDIR /opa
+
+COPY policies/ /policies/
+#COPY data/ data/
+
+EXPOSE 8181
+
+CMD ["run", "--server", "--addr=0.0.0.0:8181", "--watch", "/policies"]
