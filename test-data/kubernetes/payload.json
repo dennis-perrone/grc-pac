@@ -1,0 +1,17 @@
+{
+    "input": [
+      {
+        "kind": "Deployment",
+        "metadata": { "name": "test" },
+        "spec": {
+          "template": {
+            "spec": {
+              "containers": [
+                {"image": "nginx:latest"}
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }

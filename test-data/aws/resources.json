@@ -1,0 +1,39 @@
+[
+    {
+      "apiVersion": "s3.aws/v1",
+      "kind": "Bucket",
+      "metadata": {
+        "name": "public-bucket"
+      },
+      "spec": {
+        "acl": "public-read",
+        "encryption": "none"
+      }
+    },
+    {
+      "apiVersion": "iam.aws/v1",
+      "kind": "Policy",
+      "metadata": {
+        "name": "overly-permissive-policy"
+      },
+      "spec": {
+        "statements": [
+          {
+            "effect": "Allow",
+            "action": "*",
+            "resource": "*"
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "rds.aws/v1",
+      "kind": "DBInstance",
+      "metadata": {
+        "name": "unencrypted-db"
+      },
+      "spec": {
+        "storageEncrypted": false
+      }
+    }
+  ]
